@@ -1,0 +1,27 @@
+<h1 class="text-center">{{ title | titlecase }}</h1>
+<table class="table table-striped" style="margin-top: 50px">
+  <thead>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email Id</th>
+    <th style="padding-left: 100px">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of userList">
+    <td>{{ user.firstName }}</td>
+    <td>{{ user.lastName }}</td>
+    <td>{{ user.emailId }}</td>
+    <td>
+      <button (click)="updateUser(user.id)" class="btn btn-info"> Update</button>
+      <button (click)="deleteUser(user.id)" class="btn btn-dark" style="margin-left: 10px"> Delete</button>
+      <button (click)="getDetails(user.id)" class="btn btn-success" style="margin-left: 10px"> View</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<footer class="blockquote-footer">
+  <span>All Rights Reserved 1999 @BohdanHolub</span>
+</footer>
